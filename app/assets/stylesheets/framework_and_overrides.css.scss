@@ -15,6 +15,10 @@ img {
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
 // to make views framework-neutral
+html,
+body {
+  height: 100%;
+}
 .column {
   @extend .col-md-6;
   @extend .text-center;
@@ -44,8 +48,23 @@ section {
   @extend .row;
   margin-top: 20px;
 }
-
 //Override for the navigation bar
-.navbar {
+.navbar-fixed-top {
   background-color: #060;
 }
+//Layout for the page content to push down footer
+#layout {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  //Ignore footers height
+  margin: 0 auto -60px;
+  //Pad bottom footer height
+  padding: 0 0 60px;
+}
+//Set the fixed height for footer
+#footer {
+  height: 60px;
+  background-color: #e5e5e5;
+}
+
