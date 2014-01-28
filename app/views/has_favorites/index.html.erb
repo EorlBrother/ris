@@ -1,0 +1,29 @@
+<h1>Listing has_favorites</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Recipe</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @has_favorites.each do |has_favorite| %>
+      <tr>
+        <td><%= has_favorite.customer %></td>
+        <td><%= has_favorite.recipe %></td>
+        <td><%= link_to 'Show', has_favorite %></td>
+        <td><%= link_to 'Edit', edit_has_favorite_path(has_favorite) %></td>
+        <td><%= link_to 'Destroy', has_favorite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Has favorite', new_has_favorite_path %>

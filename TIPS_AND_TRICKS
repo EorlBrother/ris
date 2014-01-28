@@ -23,3 +23,6 @@ Change an existing model:
     In the new db/migrate/$TIMESTAMP_remove_from_$MYTABLE.rb :
       remove_column :$MYTABLE, :$MYCOLUMN
     Remove all references to $MYCOLUMN (from the files refernced in "Add a column")
+
+Revert all local changes
+  git clean -f

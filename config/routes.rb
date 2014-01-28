@@ -1,5 +1,7 @@
 Ris::Application.routes.draw do
 
+  resources :has_favorites
+
   resources :units
 
   #Has to be changed because the db view is for admins-only (so it shouldn't be our main page)
