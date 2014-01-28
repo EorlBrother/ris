@@ -9,6 +9,7 @@
       <th>Password</th>
       <th>Email</th>
       <th>Status</th>
+      <th>Settings</th>
       <th></th>
       <th></th>
       <th></th>
@@ -24,6 +25,7 @@
         <td><%= customer.password %></td>
         <td><%= customer.email %></td>
         <td><%= customer.status %></td>
+        <td><%= customer.settings %></td>
         <td><%= link_to 'Show', customer %></td>
         <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
         <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
