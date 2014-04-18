@@ -2,12 +2,16 @@
 
 one:
   name: MyString
-  description: MyString
-  how_to: MyString
-  tools: MyString
+  time: 1
+  description: MyText
+  howto: MyText
+  difficulty: 1
+  tools: MyText
 
 two:
   name: MyString
-  description: MyString
-  how_to: MyString
-  tools: MyString
+  time: 1
+  description: MyText
+  howto: MyText
+  difficulty: 1
+  tools: MyText

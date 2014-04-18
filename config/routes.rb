@@ -1,5 +1,13 @@
 Ris::Application.routes.draw do
 
+  resources :pictures
+
+  resources :ingredients
+
+  resources :recipes
+
+  resources :customers
+
   resources :units
 
   #Has to be changed because the db view is for admins-only (so it shouldn't be our main page)
@@ -7,6 +15,7 @@ Ris::Application.routes.draw do
   root :to => redirect("/db")
   
   resources :db
+  resources :customers
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

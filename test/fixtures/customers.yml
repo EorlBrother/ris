@@ -3,15 +3,17 @@
 one:
   first_name: MyString
   last_name: MyString
-  nickname: MyString
-  password: MyString
   email: MyString
-  status: MyString
+  status: 1
+  username: MyString
+  password: MyString
+  settings: MyText
 
 two:
   first_name: MyString
   last_name: MyString
-  nickname: MyString
-  password: MyString
   email: MyString
-  status: MyString
+  status: 1
+  username: MyString
+  password: MyString
+  settings: MyText
