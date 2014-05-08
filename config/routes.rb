@@ -16,9 +16,9 @@ Ris::Application.routes.draw do
 
   resources :homepage
 
-  resources :homepage
+  resources :impressum
 
-  resources :homepage
+  resources :kontakt
 
   #Has to be changed because the db view is for admins-only (so it shouldn't be our main page)
   #With a login functionality we should be abĺe to close all db resources for normal users
