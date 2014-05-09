@@ -16,13 +16,9 @@ Ris::Application.routes.draw do
 
   resources :homepage
 
-<<<<<<< Updated upstream
   resources :impressum
 
   resources :kontakt
-=======
-  resources :ingredientsdisplay
->>>>>>> Stashed changes
 
   resources :recipedisplay
 
