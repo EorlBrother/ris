@@ -1,0 +1,45 @@
+
+
+<div class="col-md-6">
+<h2> picture </h2>
+</div>
+
+<div class="col-md-6">
+
+
+<h2> <%=@recipe.name %> </h2>
+
+<table class="table table-striped">
+<tr>
+<td> <strong> Beschreibung: </strong> </td>
+<td> <%=@recipe.description %> </td>
+</tr>
+
+<tr>
+<td> <strong> Schwierigkeitsgrad: </strong> </td>
+<td> <%=@difficulty %> </td>
+</tr>
+
+<tr>
+<td> <strong> Zeitaufwand: </strong> </td>
+<td> <%=@recipe.time %> min </td>
+</tr>
+
+<tr>
+<td> <strong> benötigte Zutaten: </strong> </td>
+</tr>
+
+<tr>
+<td> <strong> Arbeitsgeräte: </strong> </td>
+<td> <%=@recipe.tools %> </td>
+</tr>
+
+
+
+
+<tr>
+<td> <strong> Zubereitung: </strong> </td>
+<td> <%=@recipe.howto %> </td>
+</tr>
+</table>
+</div>
