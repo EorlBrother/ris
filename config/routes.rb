@@ -20,6 +20,8 @@ Ris::Application.routes.draw do
 
   resources :kontakt
 
+  resources :recipessearch
+
   resources :ingredientsdisplay
 
   #Has to be changed because the db view is for admins-only (so it shouldn't be our main page)
