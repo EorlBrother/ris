@@ -28,13 +28,24 @@ units_list = [["Meter", "Perfekte Maßeinheit, für Rezepte relativ sinnlos"],
     ["Kilogramm","Schon besser"]
   ]
 
-recipes_list = [["Lasagne",2,"NomNom","Nudeln zusammenwerfen",5,"Axt"],
-    ["Steak",5,"NomNomNom","Fleisch in die Pfanne hauen",1,"Messer"],
-    ["Lady am Spieß",4,"NomNomNomNom","Hund in die Pfanne hauen",1,"Spieß"],
+recipes_list = [["Lasagne",2,"NomNom","Nudeln zusammenwerfen",5,"Axt",1],
+    ["Steak",5,"NomNomNom","Fleisch in die Pfanne hauen",1,"Messer",2],
+    ["Lady am Spieß",4,"NomNomNomNom","Hund in die Pfanne hauen",1,"Spieß",3],
+  ]
+
+pictures_list = [["/pfad/zu/bild",1,1,nil],
+    ["/pfad/zu/bild2",2,nil,3]
+  ]
+
+ingredient_packages_list = [[1,1,1,5],
+    [2,2,2,2],
+    [2,3,2,3],
+    [5,1,2,5],
+    [6,3,1,1]
   ]
 
 ingredients_list.each do |ingredient|
-  Ingredient.create(:name => ingredient[0], :description => ingredient[1], :storage => ingredient[2])
+  ingredient = Ingredient.create(:name => ingredient[0], :description => ingredient[1], :storage => ingredient[2])
 end
 
 customers_list.each do |customer|
@@ -46,5 +57,13 @@ units_list.each do |unit|
 end
 
 recipes_list.each do |recipe|
-  Recipe.create(:name => recipe[0], :time => recipe[1], :description => recipe[2], :howto => recipe[3], :difficulty => recipe[4], :tools => recipe[5])
+  Recipe.create(:name => recipe[0], :time => recipe[1], :description => recipe[2], :howto => recipe[3], :difficulty => recipe[4], :tools => recipe[5], :customer_id => recipe[6])
+end
+
+ingredient_packages_list.each do |ingredient_package|
+  IngredientPackage.create(:ingredient_id => ingredient_package[0], :recipe_id => ingredient_package[1], :unit_id => ingredient_package[2], :amount => ingredient_package[3])
+end
+
+pictures_list.each do |picture|
+  Picture.create(:picture => picture[0], :customer_id => picture[1], :recipe_id => picture[2], :ingredient_id => picture[3])
 end

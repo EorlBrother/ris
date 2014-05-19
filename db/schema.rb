@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418110835) do
+ActiveRecord::Schema.define(version: 20140519144938) do
 
   create_table "customers", force: true do |t|
     t.string   "first_name"
@@ -45,6 +45,15 @@ ActiveRecord::Schema.define(version: 20140418110835) do
     t.integer "picture_id",    null: false
   end
 
+  create_table "ingredient_packages", force: true do |t|
+    t.integer  "ingredient_id"
+    t.integer  "recipe_id"
+    t.integer  "unit_id"
+    t.integer  "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "ingredients", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -66,6 +75,9 @@ ActiveRecord::Schema.define(version: 20140418110835) do
     t.string   "picture"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "customer_id"
+    t.integer  "recipe_id"
+    t.integer  "ingredient_id"
   end
 
   create_table "recipe_has_picture", id: false, force: true do |t|
@@ -82,6 +94,7 @@ ActiveRecord::Schema.define(version: 20140418110835) do
     t.text     "tools"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "customer_id"
   end
 
   create_table "units", force: true do |t|
