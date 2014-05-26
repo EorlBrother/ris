@@ -1,0 +1,2 @@
+module IngredientDisplayHelper
+end
