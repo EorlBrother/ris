@@ -1,6 +1,11 @@
 class IngredientDisplayController < ApplicationController
   before_action :set_ingredient, only: [:show]
 
+  def index
+    @results = Ingredient.where(name: params[:q])
+    @has_results = @results.length > 0
+  end
+
   def show
 
   end
