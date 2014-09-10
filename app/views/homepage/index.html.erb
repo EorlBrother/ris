@@ -1,6 +1,7 @@
 <h2> RIS </h2>
 <br>
 <%= link_to 'DB', controller: "db" %> <br>
+<%= link_to 'Zutatensuche', controller: "ingredient_search" %> <br>
 <%= link_to 'Rezeptesuche', controller: "recipe_search" %> <br>
 <% @ingredients = Ingredient.all %>
 <% @ingredients.each do |ingredient| %>

@@ -2,7 +2,7 @@ class IngredientDisplayController < ApplicationController
   before_action :set_ingredient, only: [:show]
 
   def index
-    @results = Ingredient.where(name: params[:q])
+    @results = Ingredient.where('name LIKE ?', '%'+params[:q]+'%')
     @has_results = @results.length > 0
   end
 
