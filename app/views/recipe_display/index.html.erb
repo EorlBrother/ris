@@ -1,0 +1,15 @@
+<% @results.each do |result| %>
+  <table class="table">
+    <tr>
+      <td>
+        <%= result.name %>
+      </td>
+      <td>
+        <%= link_to "Anzeigen",  "recipe_display/" + result.id.to_s %>
+      </td>
+    </tr>
+  </table>
+<% end %>
+<% unless @results.length > 0 %>
+  Keine Ergebnisse
+<% end %>
