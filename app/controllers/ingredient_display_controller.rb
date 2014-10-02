@@ -7,7 +7,15 @@ class IngredientDisplayController < ApplicationController
   end
 
   def show
+    
+  end
 
+  def create
+    @ingredient = Ingredient.new
+    @ingredient.name = params[:name]
+    @ingredient.description = params[:description]
+    @ingredient.storage = params[:storage]
+    @ingredient.save
   end
 
   private
