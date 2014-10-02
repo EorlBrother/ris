@@ -15,13 +15,13 @@ ingredients_list = [ ["Reis","Weiße Körner, die toll schmecken können", "In d
     ["Milch", "Aber nur Bio Rohmilch", "Im Kühlschrank"]
   ]
 
-customers_list = [["Max", "Mustermann", "blub@blub.com", 2, "mmuster", "sdfsadf"],
-    ["Bla", "Hansen", "bla@blub.com", 2, "kmuster", "sdfsadf"],
-    ["Joerg", "Boll", "blech@blub.com", 2, "jmuster", "sdfsadf"],
-    ["Jürgen", "Iplahub", "ping@pong.com", 2, "tmuster", "sdfsadf"],
-    ["Thorsten", "Müller", "thorsten@blub.com", 2, "xmuster", "sdfsadf"],
-    ["Tom", "Schmidt", "XxxKillor2002@blub.com", 2, "bmuster", "sdfsadf"],
-    ["Otto", "Mustermann", "idaho@blub.com", 2, "amuster", "passwort"]
+customers_list = [["Max", "Mustermann", "blub@blub.com", 2, "mmuster", "sdfsadf",""],
+    ["Bla", "Hansen", "bla@blub.com", 2, "kmuster", "sdfsadf",""],
+    ["Joerg", "Boll", "blech@blub.com", 2, "jmuster", "sdfsadf",""],
+    ["Jürgen", "Iplahub", "ping@pong.com", 2, "tmuster", "sdfsadf",""],
+    ["Thorsten", "Müller", "thorsten@blub.com", 2, "xmuster", "sdfsadf",""],
+    ["Tom", "Schmidt", "XxxKillor2002@blub.com", 2, "bmuster", "sdfsadf",""],
+    ["Otto", "Mustermann", "idaho@blub.com", 2, "amuster", "passwort",""]
   ]
 
 units_list = [["Meter", "Perfekte Maßeinheit, für Rezepte relativ sinnlos"],
@@ -45,11 +45,11 @@ ingredient_packages_list = [[1,1,1,5],
   ]
 
 ingredients_list.each do |ingredient|
-  ingredient = Ingredient.create(:name => ingredient[0], :description => ingredient[1], :storage => ingredient[2])
+  Ingredient.create(:name => ingredient[0], :description => ingredient[1], :storage => ingredient[2])
 end
 
 customers_list.each do |customer|
-  Customer.create(:first_name => customer[0], :last_name => customer[1], :email => customer[2], :status => customer[3], :username => customer[4], :password => customer[5])
+  Customer.create(:first_name => customer[0], :last_name => customer[1], :email => customer[2], :status => customer[3], :username => customer[4], :password => customer[5], :settings => customer[6])
 end
 
 units_list.each do |unit|
