@@ -1,0 +1,23 @@
+<%= form_tag("/ingredient_display", method: "create") do %>
+  <div class="field">
+    <%= label_tag(:name, "Name:") %>
+  </div>
+  <div class="field">
+    <%= text_field_tag(:name) %>
+  </div>
+  <div class="field">
+    <%= label_tag(:description, "Beschreibung:") %>
+  </div>
+  <div class="field">
+    <%= text_area_tag(:description) %>
+  </div>
+  <div class="field">
+    <%= label_tag(:storage, "Lagerung:") %>
+  </div>
+  <div class="field">
+    <%= text_area_tag(:storage) %>
+  </div>
+  <div class="actions">
+    <%= submit_tag("Erstellen") %>
+  </div>
+<% end %>
