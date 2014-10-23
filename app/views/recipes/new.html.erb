@@ -1,8 +1,9 @@
 <%= form_tag("/recipes", method: "create") do %>
   
-<div class="field">
+  <div class="field">
     <%= label_tag(:name, "Name:") %>
   </div>
+
   <div class="field">
     <%= text_field_tag(:name) %>
   </div>
@@ -10,33 +11,46 @@
   <div class="field">
     <%= label_tag(:description, "Beschreibung:") %>
   </div>
+
   <div class="field">
     <%= text_area_tag(:description) %>
   </div>
-  
-<div class="field">
+    
+  <div class="field">
     <%= label_tag(:howto, "Zubereitung:") %>
   </div>
+
   <div class="field">
     <%= text_area_tag(:howto) %>
   </div>
 
-<div class="field">
+  <div class="field">
     <%= label_tag(:difficulty, "Schwierigkeitsgrad:") %>
   </div>
+
   <div class="field">
-    <%= number_field(:difficulty, in: 1.0..10.0, step: 1.0) %>
+    <%= number_field(:difficulty, nil, in: 1.0..20.0, step: 0.5) %>
   </div>
 
-<div class="field">
-    <%= label_tag(:tools, "Geraete:") %>
+  <div class="field">
+    <%= label_tag(:tools, "Geräte:") %>
   </div>
+    
   <div class="field">
     <%= text_area_tag(:tools) %>
   </div>
-  
-<div class="actions">
+    
+  <div class="field">
+    <%= label_tag(:tools, "Zutaten:") %>
+  </div>
+
+  <div class="field">
+    <%= select_tag(:ingredients,  options_from_collection_for_select(Ingredient.all, :id, :name))%>
+  </div>
+
+  <div class="actions">
     <%= submit_tag("Erstellen") %>
   </div>
+
 <% end %>
 

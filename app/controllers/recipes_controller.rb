@@ -26,8 +26,9 @@ class RecipesController < ApplicationController
     @recipe.name = params[:name]
     @recipe.description = params[:description]
     @recipe.howto = params[:howto]
-    @recipe.difficulty = params[:difficulty]
+    @recipe.difficulty = params[:difficulty][0].to_i
     @recipe.tools = params[:tools]
+    @recipe.customer = Customer.find(1)
     @recipe.save
   end
 
