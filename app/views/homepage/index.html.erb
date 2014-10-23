@@ -2,14 +2,15 @@
 <br>
 <%= link_to 'DB', controller: "db" %> <br>
 <%= link_to 'Zutatensuche', controller: "ingredient_search" %> <br>
-<%= link_to 'Rezeptesuche', controller: "recipe_search" %> <br>
+<%= link_to 'Rezeptesuche', "recipes/search" %> <br>
 <%= link_to 'Zutateneingabe', controller: "ingredient_entry" %> <br>
-<%= link_to 'Rezepteeingabe', controller: "recipe_entry" %> <br>
+<%= link_to 'Rezepteeingabe', "recipes/entry" %> <br>
 <% @ingredients = Ingredient.all %>
 <% @ingredients.each do |ingredient| %>
   <%= link_to 'Zutatenanzeige ' + ingredient.name, "ingredient_display/" + ingredient.id.to_s %> <br>
 <%end %>
+<%= render "recipes/search" %> 
 <% @recipes = Recipe.all %>
 <% @recipes.each do |recipe| %>
-  <%= link_to 'Rezepteanzeige ' + recipe.name, "recipe_display/" + recipe.id.to_s %> <br>
+  <%= link_to 'Rezepteanzeige ' + recipe.name, "recipes/" + recipe.id.to_s %> <br>
 <%end %>
