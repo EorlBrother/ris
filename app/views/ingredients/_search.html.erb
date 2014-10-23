@@ -1,0 +1,11 @@
+<%= form_tag("/ingredients", method: "get") do %>
+  <div class="field">
+    <%= label_tag(:q, "Search for:") %>
+  </div>
+  <div class="field">
+    <%= text_field_tag(:q) %>
+  </div>
+  <div class="actions">
+    <%= submit_tag("Search") %>
+  </div>
+<% end %>

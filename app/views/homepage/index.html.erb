@@ -1,14 +1,15 @@
 <h2> RIS </h2>
 <br>
 <%= link_to 'DB', controller: "db" %> <br>
-<%= link_to 'Zutatensuche', controller: "ingredient_search" %> <br>
+<%= link_to 'Zutatensuche', controller: "ingredients" %> <br>
 <%= link_to 'Rezeptesuche', "recipes/search" %> <br>
-<%= link_to 'Zutateneingabe', controller: "ingredient_entry" %> <br>
-<%= link_to 'Rezepteeingabe', "recipes/entry" %> <br>
+<%= link_to 'Zutateneingabe', "ingredients/new" %> <br>
+<%= link_to 'Rezepteeingabe', "recipes/new" %> <br>
 <% @ingredients = Ingredient.all %>
 <% @ingredients.each do |ingredient| %>
-  <%= link_to 'Zutatenanzeige ' + ingredient.name, "ingredient_display/" + ingredient.id.to_s %> <br>
+  <%= link_to 'Zutatenanzeige ' + ingredient.name, "ingredients/" + ingredient.id.to_s %> <br>
 <%end %>
+<%= render "ingredients/search" %> 		 
 <%= render "recipes/search" %> 
 <% @recipes = Recipe.all %>
 <% @recipes.each do |recipe| %>

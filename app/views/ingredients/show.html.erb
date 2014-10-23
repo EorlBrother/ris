@@ -1,19 +1,30 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @ingredient.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @ingredient.description %>
-</p>
-
-<p>
-  <strong>Storage:</strong>
-  <%= @ingredient.storage %>
-</p>
-
-<%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
-<%= link_to 'Back', ingredients_path %>
+<div class='col-md-6'>
+  <table class="table">
+    <tr>
+      <% @ingredient.pictures.each do |pic| %>
+      <td>
+        <%= pic.picture %>
+      </td>
+      <%end %>
+    </tr>
+  </table>
+</div>
+<div class='col-md-6'>
+  <table class="table">
+    <tr>
+      <td>
+        <%= @ingredient.name %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= @ingredient.description %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= @ingredient.storage %>
+      </td>
+    </tr>
+  </table>
+</div>
