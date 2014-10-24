@@ -30,10 +30,13 @@ class RecipesController < ApplicationController
     @recipe.tools = params[:tools]
     @recipe.customer = Customer.find(1)
     @recipe.save
-    @zutat = Array.new
-    @zutat << params[:ingredient_unit] << params[:ingredient_amount] << params[:ingredients]
+    
   end
 
+  def zutathinzufügen
+   @zutat = Array.new
+   @zutat << params[:ingredient_unit] << params[:ingredient_amount] << params[:ingredients]
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_recipe
