@@ -29,7 +29,7 @@
   </div>
 
   <div class="field">
-    <%= number_field(:difficulty, nil, in: 1.0..20.0, step: 0.5) %>
+    <%= number_field(:difficulty, nil, in: 1.0..5.0, step: 1) %>
   </div>
 
   <div class="field">
@@ -45,7 +45,10 @@
   </div>
 
   <div class="field">
+    <%= text_area_tag(:ingredient_unit)%>
+    <%= select_tag(:ingredient_amount, options_for_select(["ml","g","Messerspitze", "Prise"]))%>
     <%= select_tag(:ingredients,  options_from_collection_for_select(Ingredient.all, :id, :name))%>
+    <%= submit_tag("Zutat hinzufügen") %>
   </div>
 
   <div class="actions">
