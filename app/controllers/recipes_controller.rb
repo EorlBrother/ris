@@ -29,6 +29,12 @@ class RecipesController < ApplicationController
     @recipe.difficulty = params[:difficulty][0].to_i
     @recipe.tools = params[:tools]
     @recipe.customer = Customer.find(1)
+    @recipe.ingredientPackages = Array.new
+    @ingredientPackage = IngredientPackage.new
+    @ingredientPackage.ingredient = Ingredient.find(params[:ingredient])
+    @ingredientPackage.unit = Unit.find(params[:unit])
+    @ingredientPackage.amount = params[:amount][0].to_f
+    @recipe.ingredientPackages << @ingredientPackage
     @recipe.save
     
   end

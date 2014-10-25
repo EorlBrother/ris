@@ -45,16 +45,15 @@
   </div>
 
   <div class="field">
-    <%= form_tag("/recipes", method: "zutathinzufügen") do %>
-    <%= text_area_tag(:ingredient_unit)%>
-    <%= select_tag(:ingredient_amount, options_for_select(["ml","g","Messerspitze", "Prise"]))%>
-    <%= select_tag(:ingredients,  options_from_collection_for_select(Ingredient.all, :id, :name))%>
-    <%= submit_tag("Zutat hinzufügen") %>
+    <% inf = 1.0 / 0.0 %>
+    <%= number_field(:amount, nil, in: 0.0..inf, step: 0.1)%>
+    <%= select_tag(:unit,  options_from_collection_for_select(Unit.all, :id, :name))%>
+    <%= select_tag(:ingredient,  options_from_collection_for_select(Ingredient.all, :id, :name))%>
   </div>
 
   <div class="actions">
     <%= submit_tag("Erstellen") %>
   </div>
 
-<% end %>
+<%end %>
 
